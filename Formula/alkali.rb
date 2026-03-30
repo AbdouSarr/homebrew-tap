@@ -1,11 +1,11 @@
 class Alkali < Formula
   desc "Reactive bridge between Swift's compiler and your running UI"
-  homepage "https://github.com/AbdouSarr/alkali"
-  url "https://github.com/AbdouSarr/alkali/archive/refs/tags/v1.0.0.tar.gz"
+  homepage "https://github.com/abdousarr/alkali"
+  url "https://github.com/abdousarr/alkali/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
   license "MIT"
 
-  head "https://github.com/AbdouSarr/alkali.git", branch: "master"
+  head "https://github.com/abdousarr/alkali.git", branch: "master"
 
   depends_on xcode: ["16.0", :build]
   depends_on macos: :sonoma
