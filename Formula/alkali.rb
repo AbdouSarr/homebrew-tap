@@ -1,7 +1,7 @@
 class Alkali < Formula
   desc "Reactive bridge between Swift's compiler and your running UI"
   homepage "https://github.com/abdousarr/alkali"
-  url "https://github.com/abdousarr/alkali/archive/refs/tags/v1.0.2.tar.gz"
+  url "https://github.com/AbdouSarr/alkali/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "7d01727b077e4a654f0782b5952324d10295d06705cace27122f0ab29008f8e5"
   license "MIT"
 
@@ -34,19 +34,18 @@ class Alkali < Formula
   test do
     assert_match "1.0.2", shell_output("#{bin}/alkali --version")
 
-    # Create a minimal SwiftUI view file and verify Alkali can analyze it
     (testpath/"TestView.swift").write <<~SWIFT
       import SwiftUI
       struct TestView: View {
-          @State var count: Int = 0
-          var body: some View {
-              VStack {
-                  Text("Hello")
-                      .font(.headline)
-                      .padding(16)
-                  Button("Tap") { count += 1 }
-              }
-          }
+@State var count: Int = 0
+var body: some View {
+    VStack {
+        Text("Hello")
+            .font(.headline)
+            .padding(16)
+        Button("Tap") { count += 1 }
+    }
+}
       }
     SWIFT
 
