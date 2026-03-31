@@ -1,10 +1,10 @@
 class Alkali < Formula
   desc "Reactive bridge between Swift's compiler and your running UI"
   homepage "https://github.com/abdousarr/alkali"
-  url "https://github.com/AbdouSarr/alkali/releases/download/v1.0.4/alkali-macos.tar.gz"
-  sha256 "2b9eddc1a8db29f5363d584d5632a68c66eb95011e816b6757a497d46568bb8c"
+  url "https://github.com/AbdouSarr/alkali/releases/download/v1.0.5/alkali-macos.tar.gz"
+  sha256 "ed01c1e47c4ce95423c6832dafa2eeae8afa79bc3cf1615bf08edd438704c250"
   license "MIT"
-  version "1.0.4"
+  version "1.0.5"
 
   depends_on macos: :sonoma
 
@@ -29,6 +29,6 @@ class Alkali < Formula
   end
 
   test do
-    assert_match "1.0.4", shell_output("#{bin}/alkali --version")
+    assert_match "1.0.5", shell_output("#{bin}/alkali --version")
   end
 end
