@@ -1,8 +1,8 @@
 class Alkali < Formula
   desc "Reactive bridge between Swift's compiler and your running UI"
   homepage "https://github.com/abdousarr/alkali"
-  url "https://github.com/AbdouSarr/alkali/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "7d01727b077e4a654f0782b5952324d10295d06705cace27122f0ab29008f8e5"
+  url "https://github.com/AbdouSarr/alkali/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "986d120fb28ef755bf36a619119f8c14c12311ba52bc6cfc98b30963efd85bd3"
   license "MIT"
 
   head "https://github.com/abdousarr/alkali.git", branch: "master"
@@ -32,7 +32,7 @@ class Alkali < Formula
   end
 
   test do
-    assert_match "1.0.2", shell_output("#{bin}/alkali --version")
+    assert_match "1.0.3", shell_output("#{bin}/alkali --version")
 
     (testpath/"TestView.swift").write <<~SWIFT
       import SwiftUI
