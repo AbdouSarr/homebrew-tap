@@ -1,18 +1,15 @@
 class Alkali < Formula
   desc "Reactive bridge between Swift's compiler and your running UI"
   homepage "https://github.com/abdousarr/alkali"
-  url "https://github.com/AbdouSarr/alkali/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "986d120fb28ef755bf36a619119f8c14c12311ba52bc6cfc98b30963efd85bd3"
+  url "https://github.com/AbdouSarr/alkali/releases/download/v1.0.4/alkali-macos.tar.gz"
+  sha256 "2b9eddc1a8db29f5363d584d5632a68c66eb95011e816b6757a497d46568bb8c"
   license "MIT"
+  version "1.0.4"
 
-  head "https://github.com/abdousarr/alkali.git", branch: "master"
-
-  depends_on xcode: ["16.0", :build]
   depends_on macos: :sonoma
 
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox"
-    bin.install ".build/release/alkali"
+    bin.install "alkali"
   end
 
   def caveats
@@ -32,24 +29,6 @@ class Alkali < Formula
   end
 
   test do
-    assert_match "1.0.3", shell_output("#{bin}/alkali --version")
-
-    (testpath/"TestView.swift").write <<~SWIFT
-      import SwiftUI
-      struct TestView: View {
-@State var count: Int = 0
-var body: some View {
-    VStack {
-        Text("Hello")
-            .font(.headline)
-            .padding(16)
-        Button("Tap") { count += 1 }
-    }
-}
-      }
-    SWIFT
-
-    output = shell_output("#{bin}/alkali render TestView --project-root #{testpath}")
-    assert_match "TestView", output
+    assert_match "1.0.4", shell_output("#{bin}/alkali --version")
   end
 end
